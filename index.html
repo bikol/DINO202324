@@ -18,10 +18,9 @@
       Ale można też zamiast listy plików użyć kropki aby dodać do następnego commita wszystkie pliki w repozytorium, które mają zmiany oraz nie są ignorowane.
     </div>
     <div>
-      <code> git branch -v </code>
-      Komenda  służy do wyświetlenia listy wszystkich branchy w repozytorium. 
-      Wynik będzie zawierał dokładne informacje o każdym branchu i o ostatnim commicie, który został na nich wykonany.
-      Polecenie jest przydatne, jeśli chcemy szybko sprawdzić, na których branchach ostatnio były dokonywane zmiany i w jakim są one stanie, bez konieczności wchodzenia na każdy branch osobno.
+      <code> git reset HEAD </code>
+     Komenda służy do usunięcia wszystkich zmian, które  za pomocą 'git add' zostały dodane do obszaru "staged" i nie zostały jeszcze zatwierdzone.
+     Po wykonaniu tego polecenia zmiany wrócą do stanu przed ich dodaniem, ale zostaną zachowane w plikach roboczych.
     </div>
   </body>
 </html>
