@@ -18,7 +18,15 @@
       Ale można też zamiast listy plików użyć kropki aby dodać do następnego commita wszystkie pliki w repozytorium, które mają zmiany oraz nie są ignorowane.
     </div>
     <div>
-      Tu opisz kolejną komendę ....
+       <h2><code> git remote add "remote_name" "git url"</code></h2>
+      <p>Komenda jest używana do dodawania nowego zdalnego repozytorium do naszego lokalnego projektu. Dzieki czemu możemy łatwo uaktualniać nasz lokalny projekt do stanu ze zdalnego repozytorium.</p>
+      <h3>Składnia:</h3>
+        <p>"remote_name" - to nazwa, której będzie można używać do odwoływania się do tego repozytorium zdalnego. Może to być dowolna nazwa, ale popularną nazwą jest "origin"</p>
+       <p>"git url" - to adres URL repozytorium zdalnego. Może to być URL HTTPS lub SSH, zależnie od tego, jak repozytorium jest dostępne.</p>
+      <h3>Przyklad użycia:</h3>
+      <p> <code>git remote add origin https://github.com/bikol/DINO202324.git<code> </p>
+      <p>W tym przykładzie, git remote add tworzy nowe repozytorium zdalne o nazwie origin i łączy je z repozytorium pod adresem https://github.com/bikol/DINO202324.git</p>
+      <p>Po dodaniu repozytorium zdalnego, możesz używać aliasu origin w innych komendach Git, na przykład przy pobieraniu (git fetch), ściąganiu (git pull), wysyłaniu (git push), itp.</p>
     </div>
   </body>
 </html>
