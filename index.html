@@ -16,7 +16,41 @@
       Komenda <code>git add</code> służy do stageowania zmian. Zwykle po add
       podaje się listę plików które chcemy stageować. Ale można też zamiast
       listy plików użyć kropki aby dodać do następnego commita wszystkie pliki w
-      repozytorium, które mają zmiany oraz nie są ignorowane.
+      repozytorium, które mają zmiany oraz nie są ignorowane
+      <code>
+        git checkout -b "branch"
+      </code>
+      Komenda git checkout -b "branch" umożliwia stworzenie nowej gałęzi (brancha).
+      Bezpośrednio po wykonaniu komendy następuje przełączenie na nową gałąź, na której można zacząć pracę.
+      Komenda git checkout -b "branch" jest równoważna dwóm komendom, następującym po sobie: git branch "branch" (tworzy nowy branch), git checkout "branch" (przechodzi na zadany branch).
+    </div>
+    <div>
+      <code>git add .</code>
+      Komenda <code>git add</code> służy do stageowania zmian. 
+      Zwykle po add podaje się listę plików które chcemy stageować. <--- TODO dobrze by było wyjaśnić znaczenie pojęcia stageować.
+      Ale można też zamiast listy plików użyć kropki aby dodać do następnego commita wszystkie pliki w repozytorium, które mają zmiany oraz nie są ignorowane.
+    </div>
+    <div>
+      <code>git branch --merged</code>     
+      Komenda <code>git branch --merged</code> służy do wyświetlania listy branchy gitowych, które zostały scalone
+      do aktualnej gałęzi. Użycie jej pomoże Ci zidentyfikować gałęzie, które można bezpiecznie usunąć, 
+      ponieważ zostały już scalone z aktualną gałęzią i ich praca jest zakończona. Używa sie tego w sytuacjach,
+      gdzie by zachować porządek w repozytorium usuwając niepotrzebne branche.
+    </div>
+    <div>
+    <code>git push "remote" "branch"</code>
+        <p>"remote": wskazuje na repozytorium na którym ma zadziałać komenda <br>
+           "branch": wskazuje na jakim branchu mamy operować</p>
+        <p>Komenda ta publikuje zawartość (brancha) repozytorium lokalnego na zdalnym, <br>
+        jeśli publikacja zmian nie będzie możliwa w sposób domyślny (fast-forward),<br>
+        to wykonanie zostanie przerwane.</p>
+    </div>
+    <div>
+      <code>git branch --merged</code>
+      Do opisu
+    </div>
+    <div>
+      Tu opisz kolejną komendę TODO
     </div>
     <div>
       <code>git blame -C "filename"</code>
@@ -24,6 +58,10 @@
       identyfikowania, która linia została ostatnio zmodyfikowana i kto dokonał
       tych zmian. Dodatkowo, opcja -C pozwala na wykrywanie przeniesionych
       fragmentów kodu między plikami.
+      <code>git commit -a -m ""</code>
+      Komenda służy do commita (zatwierdzenia) zmian we wszystkich plikach, które zostały zmodyfikowane lub usunięte.
+      <code>-a</code>Dodaje wszystkie zmienione pliki do commita
+      <code>-m ""</code>Pozwala na dodanie opisu commita w cudzysłowiu, informujący o wprowadzonych zmianach
     </div>
     <div>Tu opisz kolejną komendę ....</div>
   </body>
