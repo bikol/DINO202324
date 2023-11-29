@@ -50,7 +50,29 @@
       Do opisu
     </div>
     <div>
-      Tu opisz kolejną komendę TODO
+      <h2><code> git remote add "remote_name" "git url"</code></h2>
+      <p>Komenda jest używana do dodawania nowego zdalnego repozytorium do naszego lokalnego projektu. Dzieki czemu możemy łatwo uaktualniać nasz lokalny projekt do stanu ze zdalnego repozytorium.</p>
+      <h3>Składnia:</h3>
+        <p>"remote_name" - to nazwa, której będzie można używać do odwoływania się do tego repozytorium zdalnego. Może to być dowolna nazwa, ale popularną nazwą jest "origin"</p>
+       <p>"git url" - to adres URL repozytorium zdalnego. Może to być URL HTTPS lub SSH, zależnie od tego, jak repozytorium jest dostępne.</p>
+      <h3>Przyklad użycia:</h3>
+      <p> <code>git remote add origin https://github.com/bikol/DINO202324.git<code> </p>
+      <p>W tym przykładzie, git remote add tworzy nowe repozytorium zdalne o nazwie origin i łączy je z repozytorium pod adresem https://github.com/bikol/DINO202324.git</p>
+      <p>Po dodaniu repozytorium zdalnego, możesz używać aliasu origin w innych komendach Git, na przykład przy pobieraniu (git fetch), ściąganiu (git pull), wysyłaniu (git push), itp.</p>
+    </div><div>
+      <h3><code>git fetch "remote" "branch"</code></h3>
+      <p>
+        Komenda  <code>git fetch</code>  aktualizuje informacje o zmianach w repozytorium zdalnym <b><i>remote</i></b> i gałęzi <b><i>branch</i></b> bez automatycznego scalania ich z gałęzią lokalną. Pozwala to na utrzymanie repozytorium lokalnego zgodnego ze zdalnym repozytorium.
+        Użytkownik sam możee zadecydować, co zrobić z pobranymi zmianami, np. połączyć je ze swoją gałęzią przy pomocy <code>git merge</code> lub obejrzeć zmiany przy pomocy <code>git diff<code>
+      </p>
+    </div>
+    <div>
+       <code>git branch -v</code>
+        Polecenie <code>git branch</code> służy do zarządzania gałęziami. Podane bez dodatkowych opcji wyświetla listę gałęzi. 
+        Po dodaniu do komendy flagi -v uzyskamy dodatkowe informacje dla każdej gałęzi:
+        - jaki był ostatni zatwierdzony commit  
+        - jaka jest jej relacja z gałęzią źródłową (upstrem branch)
+        Jeśli użyjemy -vv dowiemy się również jaka jest nazwa gałęzi źródłowej oraz powiązana ścieżka workree (jeśli istnieje).
     </div>
     <div>
       <code>git blame -C "filename"</code>
@@ -63,6 +85,12 @@
       <code>-a</code>Dodaje wszystkie zmienione pliki do commita
       <code>-m ""</code>Pozwala na dodanie opisu commita w cudzysłowiu, informujący o wprowadzonych zmianach
     </div>
-    <div>Tu opisz kolejną komendę ....</div>
+    <div>
+      <code>git config --global color.ui true</code>
+      <p> <code>git config --global color.ui true</code> ustawia kolorowanie wyjścia poleceń dla wszystkich repozytoriów Git na twoim komputerze. Dzięki tej opcji wyniki poleceń Git będą kolorowane, co ułatwia czytanie i zrozumienie informacji na ekranie. Jest to przydatne, zwłaszcza przy pracy z bardziej skomplikowanymi repozytoriami i operacjami gitowymi.</p>
+    </div>
+    <div>
+      Tu opisz kolejną komendę TODO
+    </div>
   </body>
 </html>
