@@ -16,7 +16,6 @@
       Zwykle po add podaje się listę plików które chcemy stageować. <--- TODO dobrze by było wyjaśnić znaczenie pojęcia stageować.
       Ale można też zamiast listy plików użyć kropki aby dodać do następnego commita wszystkie pliki w repozytorium, które mają zmiany oraz nie są ignorowane.
     </div>
-
     <div>
       <code>git branch --merged</code>     
       Komenda <code>git branch --merged</code> służy do wyświetlania listy branchy gitowych, które zostały scalone
@@ -46,12 +45,21 @@
       <p> <code>git remote add origin https://github.com/bikol/DINO202324.git<code> </p>
       <p>W tym przykładzie, git remote add tworzy nowe repozytorium zdalne o nazwie origin i łączy je z repozytorium pod adresem https://github.com/bikol/DINO202324.git</p>
       <p>Po dodaniu repozytorium zdalnego, możesz używać aliasu origin w innych komendach Git, na przykład przy pobieraniu (git fetch), ściąganiu (git pull), wysyłaniu (git push), itp.</p>
+    </div><div>
+      <h3><code>git fetch "remote" "branch"</code></h3>
+      <p>
+        Komenda  <code>git fetch</code>  aktualizuje informacje o zmianach w repozytorium zdalnym <b><i>remote</i></b> i gałęzi <b><i>branch</i></b> bez automatycznego scalania ich z gałęzią lokalną. Pozwala to na utrzymanie repozytorium lokalnego zgodnego ze zdalnym repozytorium.
+        Użytkownik sam możee zadecydować, co zrobić z pobranymi zmianami, np. połączyć je ze swoją gałęzią przy pomocy <code>git merge</code> lub obejrzeć zmiany przy pomocy <code>git diff<code>
+      </p>
     </div>
     <div>
       <code>git commit -a -m ""</code>
       Komenda służy do commita (zatwierdzenia) zmian we wszystkich plikach, które zostały zmodyfikowane lub usunięte.
       <code>-a</code>Dodaje wszystkie zmienione pliki do commita
       <code>-m ""</code>Pozwala na dodanie opisu commita w cudzysłowiu, informujący o wprowadzonych zmianach
+    </div>
+    <div>
+      Tu opisz kolejną komendę TODO
     </div>
   </body>
 </html>
