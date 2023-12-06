@@ -3,7 +3,6 @@
     <title>Opis komend Git</title>
   </head>
   <body>
-    <div>
       <code>
         git checkout -b "branch"
       </code>
@@ -13,9 +12,35 @@
     </div>
     <div>
       <code>git add .</code>
-      Komenda <code>git add</code> służy do stageowania zmian. 
-      Zwykle po add podaje się listę plików które chcemy stageować. 
+      Komenda <code>git add</code> służy do stageowania zmian.
+      Zwykle po add podaje się listę plików które chcemy stageować. <--- TODO dobrze by było wyjaśnić znaczenie pojęcia stageować.
       Ale można też zamiast listy plików użyć kropki aby dodać do następnego commita wszystkie pliki w repozytorium, które mają zmiany oraz nie są ignorowane.
+    </div>
+
+    <div>
+      <code>git branch --merged</code>
+      Komenda <code>git branch --merged</code> służy do wyświetlania listy branchy gitowych, które zostały scalone
+      do aktualnej gałęzi. Użycie jej pomoże Ci zidentyfikować gałęzie, które można bezpiecznie usunąć,
+      ponieważ zostały już scalone z aktualną gałęzią i ich praca jest zakończona. Używa sie tego w sytuacjach,
+      gdzie by zachować porządek w repozytorium usuwając niepotrzebne branche.
+    </div>
+    <div>
+    <code>git push "remote" "branch"</code>
+        <p>"remote": wskazuje na repozytorium na którym ma zadziałać komenda <br>
+           "branch": wskazuje na jakim branchu mamy operować</p>
+        <p>Komenda ta publikuje zawartość (brancha) repozytorium lokalnego na zdalnym, <br>
+        jeśli publikacja zmian nie będzie możliwa w sposób domyślny (fast-forward),<br>
+        to wykonanie zostanie przerwane.</p>
+    </div>
+    <div>
+      <code>git branch --merged</code>
+      Do opisu
+    </div>
+    <div>
+      <code>git commit -a -m ""</code>
+      Komenda służy do commita (zatwierdzenia) zmian we wszystkich plikach, które zostały zmodyfikowane lub usunięte.
+      <code>-a</code>Dodaje wszystkie zmienione pliki do commita
+      <code>-m ""</code>Pozwala na dodanie opisu commita w cudzysłowiu, informujący o wprowadzonych zmianach
     </div>
     <div>
       <h3><code>git fetch "remote" "branch"</code></h3>
@@ -24,5 +49,79 @@
         Użytkownik sam możee zadecydować, co zrobić z pobranymi zmianami, np. połączyć je ze swoją gałęzią przy pomocy <code>git merge</code> lub obejrzeć zmiany przy pomocy <code>git diff<code>
       </p>
     </div>
+    <div id="git bisect">
+      <h3>git bisect (start, bad, good, reset)</h3>
+      <p>
+        <code>git bisect</code> pozwala przeprowadzić binarne przeszukiwanie historii projektu, aby
+        zidentyfikować commit, który wprowadził błąd.
+      </p>
+      <h3>Przykład użycia</h3>
+      <p>Kiedy zorientujesz się, że w projekcie jest bug, np. jakaś funkcjonalność przestała działać (a jakiś czas temu działała), ale nie wiesz, kiedy zostało to popsute, możesz użyć git bisect, aby szybko zlokalizować commit, w którym pojawił się bug. Wystarczy wskazać commit, w którym funkcja nie działa (prawdopodobnie najnowszy) i taki, w którym na pewno działa (np. bardzo stary, zaraz po wprowadzeniu danej funkcjonalności).</p>
+
+      <h3>Jak używać</h3>
+      <ol>
+        <li>
+          Zaczynasz od podania "złego" commita, który na pewno zawiera błąd, oraz
+          "dobrego" commita, który na pewno jest sprzed wprowadzenia błędu.
+        </li>
+        <li>
+          Następnie <code>git bisect</code> wybiera commit pomiędzy tymi dwoma
+          punktami końcowymi i pyta Cię, czy wybrany commit jest "dobry" czy
+          "zły".
+        </li>
+        <li>
+          Kontynuujesz zawężanie zakresu, aż znajdziesz konkretny commit, który
+          wprowadził poszukiwaną zmianę.
+        </li>
+      </ol>
+
+      <p>
+        <code>git bisect</code> można użyć do znalezienia
+        commita, który zmienił dowolną właściwość Twojego projektu, np. commita,
+        który naprawił błąd, lub commita, który spowodował poprawę wydajności
+        benchmarka.
+      </p>
+
+      <h3>Use case</h3>
+      <p>QWERT123 to commit, który wprowadzał działający feature, a ZXCVY098 to obecny commit, który nie działa</p>
+
+      <pre>
+        $ git bisect start
+        $ git bisect bad # Aktualna wersja (ZXCVY098) jest zła
+        $ git bisect good QWERT123 # QWERT123 jest znane jako dobre
+      </pre>
+
+      <p>
+        Po podaniu co najmniej jednego złego i jednego dobrego commita,
+        <code>git bisect</code> wybiera commit w środku tego zakresu historii,
+        sprawdza go i wyświetla coś w stylu:
+      </p>
+
+      <pre>
+        Bisecting: 675 revisions left to test after this (roughly 10 steps)
+      </pre>
+
+      <p>
+        Teraz powinieneś uruchomić sprawdzoną wersję i przetestować ją. Jeśli ta
+        wersja działa poprawnie, wpisz <code>git bisect good</code>. Jeśli ta
+        wersja jest zepsuta, wpisz <code>git bisect bad</code>. Następnie
+        <code>git bisect</code> wyświetli:
+      </p>
+
+      <pre>
+        Bisecting: 337 revisions left to test after this (roughly 9 steps)
+      </pre>
+
+      <p>
+        Powtarzaj ten proces, aż ostatecznie nie będzie już więcej commitów do sprawdzenia, a
+        konsola wydrukuje opis pierwszego złego commita, który jest przyczyną bug'a.
+      </p>
+      <p>Jeśli chcesz przerwać bisekcję możesz użyć <code>git bisect reset</code></p>
+    </div>
+
+    <div>
+      Tu opisz kolejną komendę TODO
+    </div>
+
   </body>
 </html>
